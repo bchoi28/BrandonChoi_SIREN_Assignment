@@ -157,7 +157,7 @@ On your Facebook account, you have friends who all have a list of movies that th
 
 ## Frontend Visualization
 
-![frontend](/siren_assignment/public/SIREN_frontend.png)
+![frontend](/public/SIREN_frontend.png)
 
 #### I made a simple react app to visualize the solution on the browser. 
 
