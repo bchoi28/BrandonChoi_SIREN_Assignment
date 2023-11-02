@@ -1,0 +1,58 @@
+.main-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-header {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.network-movies-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px;
+    padding-bottom: 0px;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.movies-header,
+.network-header {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.network-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.result-container {
+    margin-top: -10px;
+    padding: 5px;
+    padding-top: 0px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.result {
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 0px;
+}
+
+.add-movie-bar {
+    margin-left: 3px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.add-movie-bar * {
+    margin-right: 8px;
+}
