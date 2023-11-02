@@ -35,6 +35,7 @@ export const findMostPopularMovieBFS = (root) => {
 
             const count = movieCount.get(movie) + 1;
             movieCount.set(movie, count);
+
             if (count > maxCount) {
                 maxCount = count;
                 mostPopularMovies = [movie];

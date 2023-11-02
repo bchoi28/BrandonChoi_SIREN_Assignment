@@ -18,14 +18,18 @@ function findMostPopularMovieBFS(root) {
 
             if (count > maxCount) {
                 maxCount = count;
-                mostPopularMovie = movie;
-            };
+                mostPopularMovies = [movie];
+            } else if (count === maxCount && !mostPopularMovies.includes(movie)) {
+                mostPopularMovies.push(movie);
+            } else if (count < maxCount && mostPopularMovies.includes(movie)) {
+                mostPopularMovies = mostPopularMovies.filter((m) => m !== movie);
+            }
         };
 
         queue.push(...person.friends);
     }
-
-    return mostPopularMovie;
+    if (mostPopularMovies.length > 1) return mostPopularMovies;
+    else return mostPopularMovies[0];
 };
 
 module.exports = findMostPopularMovieBFS;
