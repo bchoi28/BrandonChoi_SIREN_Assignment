@@ -1,5 +1,5 @@
 import React from "react";
-import { createPerson, addMovie, addFriend, findMostPopularMovieBFS, findMostPopularMovieDFS } from "../utils";
+import { createPerson, addMovie, addFriend, findMostPopularMovieBFS, findMostPopularMovieDFS } from "../../utils";
 import PersonList from "../PersonList";
 import MovieList from "../MovieList";
 import './FindMostPopularMovie.css';
@@ -28,13 +28,17 @@ const FindMostPopularMovie = () => {
     addMovie(Mark, "Movie1");
     addMovie(Joe, "Movie1", "Movie2", "Movie4");
     addMovie(Emily, "Movie1", "Movie2");
-    addMovie(Sarah, "Movie3", "Movie4");
+    addMovie(Sarah, "Movie3", "Movie2");
     addMovie(Andrew, "Movie2", "Movie3");
-    addMovie(Taylor, "Movie1", "Movie4", "Movie5");
+    addMovie(Taylor, "Movie1", "Movie2", "Movie5");
 
     // find most popular movie of Brandon's network
-    const { maxCount, mostPopularMovie } = findMostPopularMovieBFS(Brandon);
-    // const { maxCount, mostPopularMovie } = findMostPopularMovieDFS(Brandon);
+    // let { maxCount, mostPopularMovie } = findMostPopularMovieDFS(Brandon);
+    let { maxCount, mostPopularMovies } = findMostPopularMovieBFS(Brandon);
+
+    if (mostPopularMovies.length > 1) {
+        mostPopularMovies = mostPopularMovies.join(", ");
+    }
 
     return (
         <div className="main-container">
@@ -54,7 +58,7 @@ const FindMostPopularMovie = () => {
                 </div>
             </div>
             <div className="result-container">The Most Popular Movie is:
-                <div className="result">{mostPopularMovie}</div>
+                <div className="result">{mostPopularMovies}</div>
                 <div>with a count of {maxCount}</div>
                 {/* <div className="add-movie-bar" >
                     <input

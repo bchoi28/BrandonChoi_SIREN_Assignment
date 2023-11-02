@@ -23,7 +23,7 @@ export const findMostPopularMovieBFS = (root) => {
     const movieCount = new Map();
     const queue = [root];
     let maxCount = 0;
-    let mostPopularMovie;
+    let mostPopularMovies = [];
 
     while (queue.length > 0) {
         const person = queue.shift();
@@ -35,17 +35,20 @@ export const findMostPopularMovieBFS = (root) => {
 
             const count = movieCount.get(movie) + 1;
             movieCount.set(movie, count);
-
             if (count > maxCount) {
                 maxCount = count;
-                mostPopularMovie = movie;
-            };
+                mostPopularMovies = [movie];
+            } else if (count === maxCount && !mostPopularMovies.includes(movie)) {
+                mostPopularMovies.push(movie);
+            } else if (count < maxCount && mostPopularMovies.includes(movie)) {
+                mostPopularMovies = mostPopularMovies.filter((m) => m !== movie);
+            }
         };
 
         queue.push(...person.friends);
     }
 
-    return { maxCount, mostPopularMovie };
+    return { maxCount, mostPopularMovies };
 };
 
 // find most popular movie of a person's network (DFS)
