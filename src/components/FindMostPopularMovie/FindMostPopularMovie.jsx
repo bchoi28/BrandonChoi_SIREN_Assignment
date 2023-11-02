@@ -60,26 +60,6 @@ const FindMostPopularMovie = () => {
             <div className="result-container">The Most Popular Movie is:
                 <div className="result">{mostPopularMovies}</div>
                 <div>with a count of {maxCount}</div>
-                {/* <div className="add-movie-bar" >
-                    <input
-                        type="text"
-                        placeholder="Enter movie name"
-                        value={newMovie}
-                        onChange={(e) => setNewMovie(e.target.value)}
-                    />
-                    <select
-                        value={selectedPerson}
-                        onChange={(e) => setSelectedPerson(e.target.value)}
-                    >
-                        <option value="">Select a person</option>
-                        {personList.map((person, idx) => (
-                            <option key={idx} value={person.name}>
-                                {person.name}
-                            </option>
-                        ))}
-                    </select>
-                    <button onClick={handleAddMovie}>Add Movie</button>
-                </div> */}
             </div>
 
         </div>
